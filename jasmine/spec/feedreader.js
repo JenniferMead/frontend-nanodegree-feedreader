@@ -30,7 +30,6 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
         it('url defined', function(){
           allFeeds.forEach(function(feed){
             //Makes sure the URL is defined
@@ -39,8 +38,6 @@ $(function() {
             expect(feed.url).not.toBe(0);
           });
         });
-
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
@@ -53,14 +50,9 @@ $(function() {
              expect(feed.name).not.toBe(0);
            });
          });
-
     });
-
-
     /* TODO: Write a new test suite named "The menu" */
      describe('The Menu', function(){
-
-
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
@@ -70,7 +62,6 @@ $(function() {
            //Makes sure the menu is hidden by default
           expect($('body').hasClass('menu-hidden')).toBe(true);
          });
-
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
@@ -85,10 +76,8 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
           });
         });
-
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function(){
-
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
@@ -108,10 +97,8 @@ $(function() {
            done();
          });
  });
-
     /* TODO: Write a new test suite named "New Feed Selection"*/
     describe('New Feed Selection', function(){
-
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
@@ -119,7 +106,6 @@ $(function() {
          //declare the variables I will use to hold the feed
          var entry1,
          entry2;
-
          beforeEach(function(done){
            //Signals when the asyn function loadFeed has completed and its ok to run the test
            loadFeed(0, function(){
@@ -128,7 +114,6 @@ $(function() {
              done();
            });
          });
-
          it('loadFeed content changes', function(done){
            //Now we need to compare the value of the second entry to the first
            loadFeed(1, function(){
@@ -139,7 +124,5 @@ $(function() {
            done();
          })
        });
-
-
-          });
+    });
 }());
